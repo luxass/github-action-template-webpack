@@ -7,7 +7,7 @@ export default {
   entry: "./src/index.ts",
   output: {
     path: path.resolve(import.meta.dirname, "dist"),
-    filename: "index.js",
+    filename: "index.cjs",
     library: {
       type: "commonjs2",
     },
