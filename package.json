@@ -23,6 +23,7 @@
     "@luxass/eslint-config": "^4.9.0",
     "@types/node": "^20.14.10",
     "eslint": "^9.7.0",
+    "eslint-plugin-format": "^0.1.2",
     "ts-loader": "^9.5.1",
     "typescript": "^5.5.3",
     "vitest": "^2.0.2",
