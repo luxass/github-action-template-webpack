@@ -1,6 +1,6 @@
 # github-action-template-webpack
 
-An opinionated github actions template
+An opinionated GitHub Actions Template using [webpack](https://webpack.js.org) for bundling.
 
 ## Try it now!
 
