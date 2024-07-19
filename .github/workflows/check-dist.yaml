@@ -1,0 +1,49 @@
+name: check for uncommitted dist/ changes
+
+on:
+  push:
+    paths-ignore:
+      - "**.md"
+  pull_request:
+    types: [opened, synchronize]
+    paths-ignore:
+      - "**.md"
+  workflow_dispatch:
+
+jobs:
+  check-dist:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.1.7
+
+      - uses: pnpm/action-setup@v4.0.0
+        name: Install pnpm
+        id: pnpm-install
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4.0.3
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Rebuild the dist/ directory
+        run: |
+          pnpm run build
+
+      - name: Compare the expected and actual dist/ directories
+        run: |
+          if [ "$(git diff --ignore-space-at-eol dist/ | wc -l)" -gt "0" ]; then
+            echo "Detected uncommitted changes after build.  See status below:"
+            git diff
+            exit 1
+          fi
+        id: diff
+
+      - uses: actions/upload-artifact@v4.3.4
+        if: ${{ failure() && steps.diff.conclusion == 'failure' }}
+        with:
+          name: dist
+          path: dist/
