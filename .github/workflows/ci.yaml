@@ -22,24 +22,25 @@ jobs:
 
       fail-fast: false
     steps:
-      - uses: actions/checkout@v4.1.7
+      - name: checkout
+        uses: actions/checkout@v4.1.7
 
-      - name: Setup pnpm
+      - name: setup pnpm
         uses: pnpm/action-setup@v4.0.0
 
-      - name: Setup node
+      - name: setup node
         uses: actions/setup-node@v4.0.3
         with:
           node-version: 20
 
-      - name: Install dependencies
-        run: pnpm install
+      - name: install dependencies
+        run: pnpm install --frozen-lockfile
 
-      - name: Build
+      - name: build
         run: pnpm build
 
-      - name: Lint
+      - name: lint
         run: pnpm lint
 
-      - name: Typecheck
+      - name: typecheck
         run: pnpm typecheck
