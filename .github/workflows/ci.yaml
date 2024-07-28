@@ -34,8 +34,7 @@ jobs:
           node-version: 20
 
       - name: install dependencies
-        # run: pnpm install --frozen-lockfile
-        run: pnpm install --force
+        run: pnpm install --frozen-lockfile
 
       - name: build
         run: pnpm build
