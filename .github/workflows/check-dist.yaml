@@ -14,26 +14,27 @@ jobs:
   check-dist:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4.1.7
+      - name: checkout
+        uses: actions/checkout@v4.1.7
 
-      - uses: pnpm/action-setup@v4.0.0
-        name: Install pnpm
+      - name: setup pnpm
+        uses: pnpm/action-setup@v4.0.0
         id: pnpm-install
 
-      - name: Install Node.js
+      - name: setup node
         uses: actions/setup-node@v4.0.3
         with:
           node-version: 20
           cache: pnpm
 
-      - name: Install dependencies
-        run: pnpm install
+      - name: install dependencies
+        run: pnpm install --frozen-lockfile
 
-      - name: Rebuild the dist/ directory
+      - name: rebuild the dist/ directory
         run: |
           pnpm run build
 
-      - name: Compare the expected and actual dist/ directories
+      - name: compare the expected and actual dist/ directories
         run: |
           if [ "$(git diff --ignore-space-at-eol dist/ | wc -l)" -gt "0" ]; then
             echo "Detected uncommitted changes after build.  See status below:"
@@ -42,7 +43,8 @@ jobs:
           fi
         id: diff
 
-      - uses: actions/upload-artifact@v4.3.4
+      - name: upload dist/ as an artifact
+        uses: actions/upload-artifact@v4.3.4
         if: ${{ failure() && steps.diff.conclusion == 'failure' }}
         with:
           name: dist

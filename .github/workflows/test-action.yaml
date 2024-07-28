@@ -10,7 +10,8 @@ jobs:
   test-action:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4.1.7
+      - name: checkout
+        uses: actions/checkout@v4.1.7
 
       - name: run action
         uses: ./
