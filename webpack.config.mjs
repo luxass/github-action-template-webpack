@@ -21,10 +21,7 @@ export default {
         test: /\.ts$/,
         exclude: /node_modules/,
         use: {
-          loader: "ts-loader",
-          options: {
-            transpileOnly: true,
-          },
+          loader: "swc-loader",
         },
       },
     ],
