@@ -23,13 +23,13 @@ jobs:
       fail-fast: false
     steps:
       - name: checkout
-        uses: actions/checkout@v4.2.1
+        uses: actions/checkout@v4.2.2
 
       - name: setup pnpm
         uses: pnpm/action-setup@v4.0.0
 
       - name: setup node
-        uses: actions/setup-node@v4.0.4
+        uses: actions/setup-node@v4.1.0
         with:
           node-version: 20
           cache: pnpm
