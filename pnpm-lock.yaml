@@ -22,10 +22,10 @@ importers:
         specifier: 22.18.7
         version: 22.18.7
       eslint:
-        specifier: ^9.34.0
+        specifier: 9.34.0
         version: 9.34.0
       eslint-plugin-format:
-        specifier: ^1.0.1
+        specifier: 1.0.1
         version: 1.0.1(eslint@9.34.0)
       swc-loader:
         specifier: 0.2.6
