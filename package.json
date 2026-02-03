@@ -18,7 +18,7 @@
     "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
-    "@actions/core": "1.11.1"
+    "@actions/core": "2.0.3"
   },
   "devDependencies": {
     "@eslint/js": "9.39.2",
