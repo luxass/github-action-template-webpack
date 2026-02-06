@@ -11,7 +11,7 @@ export default {
     module: true,
     chunkFormat: "module",
     library: {
-      type: "modern-module",
+      type: "module",
     },
     chunkLoading: "import",
     workerChunkLoading: "import",
