@@ -21,10 +21,10 @@
     "@actions/core": "^3.0.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.2",
+    "@eslint/js": "^10.0.0",
     "@swc/core": "^1.15.11",
     "@types/node": "^24.10.1",
-    "eslint": "^9.39.2",
+    "eslint": "^10.0.0",
     "swc-loader": "^0.2.7",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.54.0",
