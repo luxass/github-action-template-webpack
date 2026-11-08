@@ -23,7 +23,7 @@
     "@actions/core": "^3.0.0"
   },
   "devDependencies": {
-    "@swc/core": "^1.15.18",
+    "@swc/core": "^1.16.21",
     "@types/node": "^25.5.0",
     "oxfmt": "catalog:dev",
     "oxlint": "catalog:dev",
