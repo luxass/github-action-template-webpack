@@ -20,18 +20,18 @@
     "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
-    "@actions/core": "^3.0.1"
+    "@actions/core": "catalog:runtime"
   },
   "devDependencies": {
-    "@swc/core": "^1.16.21",
-    "@types/node": "^26.6.6",
+    "@swc/core": "catalog:dev",
+    "@types/node": "catalog:types",
     "oxfmt": "catalog:dev",
     "oxlint": "catalog:dev",
     "oxlint-tsgolint": "catalog:dev",
-    "swc-loader": "^0.2.7",
-    "typescript": "^7.0.2",
-    "webpack": "^5.112.2",
-    "webpack-cli": "^7.3.1"
+    "swc-loader": "catalog:dev",
+    "typescript": "catalog:dev",
+    "webpack": "catalog:dev",
+    "webpack-cli": "catalog:dev"
   },
   "packageManager": "pnpm@12.17.0"
 }

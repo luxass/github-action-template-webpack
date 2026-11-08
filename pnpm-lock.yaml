@@ -164,6 +164,9 @@ settings:
 
 catalogs:
   dev:
+    '@swc/core':
+      specifier: ^1.16.21
+      version: 1.16.21
     oxfmt:
       specifier: 0.76.0
       version: 0.76.0
@@ -173,20 +176,40 @@ catalogs:
     oxlint-tsgolint:
       specifier: 7.0.2005
       version: 7.0.2005
+    swc-loader:
+      specifier: ^0.2.7
+      version: 0.2.7
+    typescript:
+      specifier: ^7.0.2
+      version: 7.0.2
+    webpack:
+      specifier: ^5.112.2
+      version: 5.112.2
+    webpack-cli:
+      specifier: ^7.3.1
+      version: 7.3.1
+  runtime:
+    '@actions/core':
+      specifier: ^3.0.1
+      version: 3.0.1
+  types:
+    '@types/node':
+      specifier: ^26.6.6
+      version: 26.6.6
 
 importers:
 
   .:
     dependencies:
       '@actions/core':
-        specifier: ^3.0.1
+        specifier: catalog:runtime
         version: 3.0.1
     devDependencies:
       '@swc/core':
-        specifier: ^1.16.21
+        specifier: catalog:dev
         version: 1.16.21
       '@types/node':
-        specifier: ^26.6.6
+        specifier: catalog:types
         version: 26.6.6
       oxfmt:
         specifier: catalog:dev
@@ -198,16 +221,16 @@ importers:
         specifier: catalog:dev
         version: 7.0.2005
       swc-loader:
-        specifier: ^0.2.7
+        specifier: catalog:dev
         version: 0.2.7(@swc/core@1.16.21)(webpack@5.112.2)
       typescript:
-        specifier: ^7.0.2
+        specifier: catalog:dev
         version: 7.0.2
       webpack:
-        specifier: ^5.112.2
+        specifier: catalog:dev
         version: 5.112.2(@swc/core@1.16.21)(webpack-cli@7.3.1)
       webpack-cli:
-        specifier: ^7.3.1
+        specifier: catalog:dev
         version: 7.3.1(webpack@5.112.2)
 
 packages:
