@@ -20,7 +20,7 @@
     "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
-    "@actions/core": "^3.0.0"
+    "@actions/core": "^3.0.1"
   },
   "devDependencies": {
     "@swc/core": "^1.16.21",
