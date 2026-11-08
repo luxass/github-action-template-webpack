@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@swc/core": "^1.16.21",
-    "@types/node": "^25.5.0",
+    "@types/node": "^26.6.6",
     "oxfmt": "catalog:dev",
     "oxlint": "catalog:dev",
     "oxlint-tsgolint": "catalog:dev",
