@@ -2,18 +2,20 @@
   "name": "github-action-template",
   "version": "0.0.0",
   "description": "Write your description here",
-  "type": "module",
+  "license": "MIT",
   "author": {
     "name": "Lucas Nørgård",
     "email": "lucasnrgaard@gmail.com",
     "url": "https://luxass.dev"
   },
-  "packageManager": "pnpm@12.15.0",
-  "license": "MIT",
+  "type": "module",
   "main": "dist/index.js",
   "scripts": {
     "build": "webpack",
-    "lint": "eslint .",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check",
     "typecheck": "tsc --noEmit",
     "prepublishOnly": "pnpm run build"
   },
@@ -21,14 +23,15 @@
     "@actions/core": "^3.0.0"
   },
   "devDependencies": {
-    "@eslint/js": "^10.0.1",
     "@swc/core": "^1.15.18",
     "@types/node": "^25.5.0",
-    "eslint": "^10.0.3",
+    "oxfmt": "catalog:dev",
+    "oxlint": "catalog:dev",
+    "oxlint-tsgolint": "catalog:dev",
     "swc-loader": "^0.2.7",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.57.0",
     "webpack": "^5.105.4",
     "webpack-cli": "^7.0.0"
-  }
+  },
+  "packageManager": "pnpm@12.15.0"
 }
