@@ -9,3 +9,9 @@ onlyBuiltDependencies:
 minimumReleaseAgeExclude:
   # Renovate security update: pnpm@11.8.0 || 11.11.0
   - pnpm@11.8.0 || 11.11.0
+
+catalogs:
+  dev:
+    oxfmt: 0.76.0
+    oxlint: 1.91.0
+    oxlint-tsgolint: 7.0.2005
